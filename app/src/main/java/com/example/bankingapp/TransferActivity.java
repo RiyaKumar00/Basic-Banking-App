@@ -56,8 +56,8 @@ public class TransferActivity extends AppCompatActivity {
                         TextView result = findViewById(R.id.resultView);
                         Button homeButton = findViewById(R.id.homeButton);
                         Button historyButton = findViewById(R.id.TransactHist);
-                        arrow1.animate().rotationBy(180).translationXBy(-262).translationYBy(-760).scaleX(1f).setDuration(1000);
-                        arrow2.animate().rotationBy(180).translationXBy(290).translationYBy(758).scaleX(1f).setDuration(1000);
+                        arrow1.animate().rotationBy(180).translationXBy(-262).translationYBy(-762).scaleX(0.8f).setDuration(1000);
+                        arrow2.animate().rotationBy(180).translationXBy(290).translationYBy(762).scaleX(0.8f).setDuration(1000);
                         text.animate().alpha(0).setDuration(1000);
                         amtStr.animate().alpha(0).setDuration(1000);
                         transferB.animate().alpha(0).setDuration(1000);

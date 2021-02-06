@@ -7,22 +7,13 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="26dp"
-        android:background="@drawable/history"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/button4"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/home"
+        android:onClick="onHome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +27,7 @@
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
         android:paddingLeft="20sp"
-        android:paddingTop="20sp"
+        android:paddingTop="30sp"
         android:paddingRight="20sp"
         android:paddingBottom="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

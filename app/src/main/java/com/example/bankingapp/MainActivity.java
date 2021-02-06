@@ -9,18 +9,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public void onHome(View view){
+    }
     public void viewCustomerList(View view){
         Intent customerList = new Intent(getApplicationContext(),CustomerListActivity.class);
         customerList.putExtra("SenderID","");
         startActivity(customerList);
-        finish();
     }
     public void viewTranctionHistory(View view){
         Intent trasachist = new Intent(getApplicationContext(),TransitionHistory.class);
         startActivity(trasachist);
-        finish();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

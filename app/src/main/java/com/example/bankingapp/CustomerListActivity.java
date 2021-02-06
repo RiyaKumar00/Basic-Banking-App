@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,10 +21,6 @@ public class CustomerListActivity extends AppCompatActivity {
         homepage.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(homepage);
         finish();
-    }
-    public void onHistory(View view){
-        Intent trasachist = new Intent(getApplicationContext(),TransitionHistory.class);
-        startActivity(trasachist);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
