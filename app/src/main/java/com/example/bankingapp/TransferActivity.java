@@ -71,10 +71,7 @@ public class TransferActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         myDataBase.execSQL("INSERT INTO transitions(sender,receiver,amount,status) VALUES('"+senderName+"','"+receiverName+"','"+amt+"','CANCELLED')");
                         Toast.makeText(TransferActivity.this, "Transaction Cancelled", Toast.LENGTH_SHORT).show();
-                        Intent homepage = new Intent(getApplicationContext(),MainActivity.class);
-                        homepage.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(homepage);
-                        finish();
+                        onHome(view);
                     }
                 })
                 .show();

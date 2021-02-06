@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankingApp">
-        <activity android:name=".TransitionHistory"></activity>
+        <activity android:name=".Pre_MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TransitionHistory" />
         <activity android:name=".TransferActivity" />
         <activity android:name=".UserProfile" />
         <activity android:name=".CustomerListActivity" />

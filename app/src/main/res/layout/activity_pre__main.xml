@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pre_MainActivity">
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="172dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="200dp"
+        android:backgroundTint="@color/Transparent"
+        android:onClick="start"
+        android:text="START"
+        android:textSize="24sp"
+        app:cornerRadius="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="1sp" />
+
+    <ImageView
+        android:id="@+id/backgroundimg"
+        android:layout_width="548dp"
+        android:layout_height="931dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492"
+        app:srcCompat="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="sans-serif"
+        android:text="WELCOME"
+        android:textColor="#F8F6F6"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coinImg" />
+
+    <ImageView
+        android:id="@+id/coinImg"
+        android:layout_width="399dp"
+        android:layout_height="394dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/money" />
+
+    <TextView
+        android:id="@+id/byText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="by"
+        android:textColor="#002447"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/architects_daughter"
+        android:text="RIYA KUMAR"
+        android:textColor="#002447"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
