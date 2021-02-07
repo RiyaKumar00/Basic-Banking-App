@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/historyImgButton"
         android:layout_width="235dp"
         android:layout_height="235dp"
         android:layout_marginStart="84dp"
@@ -18,14 +18,14 @@
         android:cropToPadding="false"
         android:onClick="viewTranctionHistory"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/historyButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/transferButtonText"
         app:srcCompat="@drawable/history" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/transferImgButton"
         android:layout_width="235dp"
         android:layout_height="235dp"
         android:layout_marginStart="84dp"
@@ -36,7 +36,7 @@
         android:cropToPadding="false"
         android:onClick="viewCustomerList"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@+id/transferButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/swap_horiz" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/transferButtonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
@@ -53,13 +53,13 @@
         android:text="TRANSFER MONEY"
         android:textColor="#3194D6"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/historyImgButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/transferImgButton" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/historyButtonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
@@ -73,6 +73,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/historyImgButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

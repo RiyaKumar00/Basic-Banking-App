@@ -8,11 +8,34 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class TransitionHistory extends AppCompatActivity {
+    ImageButton newTrans,home;
+    ListView list;
+    public void startAnimate(){
+        newTrans.animate().translationXBy(800).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                newTrans.animate().translationXBy(-800).setDuration(500);
+            }
+        });
+        home.animate().translationXBy(800).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                home.animate().translationXBy(-800).setDuration(500);
+            }
+        });
+        list.animate().translationYBy(2000).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                list.animate().translationYBy(-2000).setDuration(500);
+            }
+        });
+    }
     public void viewCustomerList(View view){
         Intent customerList = new Intent(getApplicationContext(),CustomerListActivity.class);
         customerList.putExtra("SenderID","");
@@ -45,7 +68,10 @@ public class TransitionHistory extends AppCompatActivity {
             c1.moveToNext();
         }
         TransactionAdapter adapter = new TransactionAdapter(this,R.layout.adapter_view_layout_transactions,transHist);
-        ListView list = (ListView) findViewById(R.id.listView);
+        list = (ListView) findViewById(R.id.listView);
+        newTrans = findViewById(R.id.newButton);
+        home = findViewById(R.id.homeButton1);
+        startAnimate();
         list.setAdapter(adapter);
     }
 }

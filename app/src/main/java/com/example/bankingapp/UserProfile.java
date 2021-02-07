@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class UserProfile extends AppCompatActivity {
     String custID,custName;
     TextView name,email,phn,bank,bal,emailLabel,contactLabel,bankLabel,accLabel;
-    ImageButton home ,custButton;
+    ImageButton back ,custButton, home;
     ImageView userImg;
     public void onHome(View view){
         Intent homepage = new Intent(getApplicationContext(),MainActivity.class);
@@ -95,6 +95,12 @@ public class UserProfile extends AppCompatActivity {
                 accLabel.animate().translationXBy(800).setDuration(500);
             }
         });
+        back.animate().translationXBy(800).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                back.animate().translationXBy(-800).setDuration(500);
+            }
+        });
         home.animate().translationXBy(800).setDuration(0).withEndAction(new Runnable() {
             @Override
             public void run() {
@@ -124,7 +130,8 @@ public class UserProfile extends AppCompatActivity {
         contactLabel=findViewById(R.id.contactNo);
         bankLabel=findViewById(R.id.bankName);
         accLabel=findViewById(R.id.accBal);
-        home = findViewById(R.id.backButton);
+        back = findViewById(R.id.backButton);
+        home = findViewById(R.id.homeButton2);
         custButton = findViewById(R.id.button);
         SQLiteDatabase myDatabase = this.openOrCreateDatabase("customers", Context.MODE_PRIVATE,null);
         Cursor c = myDatabase.rawQuery("SELECT * FROM customers WHERE custid='"+customerID+"'",null);

@@ -10,12 +10,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class CustomerListActivity extends AppCompatActivity {
+    ListView list;
+    ImageButton back,home;
+    public void startAnimate(){
+        list.animate().translationYBy(2000).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                list.animate().translationYBy(-2000).setDuration(500);
+            }
+        });
+        back.animate().translationXBy(-800).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                back.animate().translationXBy(800).setDuration(500);
+            }
+        });
+        home.animate().translationXBy(-800).setDuration(0).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                home.animate().translationXBy(800).setDuration(500);
+            }
+        });
+    }
+    public void onBack(View view){
+        finish();
+    }
     public void onHome(View view){
         Intent homepage = new Intent(getApplicationContext(),MainActivity.class);
         homepage.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -26,13 +52,9 @@ public class CustomerListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
-        ListView list = (ListView) findViewById(R.id.listView);
-        list.animate().alpha(0).setDuration(0).withEndAction(new Runnable() {
-            @Override
-            public void run() {
-                list.animate().alpha(1).setDuration(500);
-            }
-        });
+        list = (ListView) findViewById(R.id.listView);
+        back = findViewById(R.id.backButton1);
+        home = findViewById(R.id.homeImgbutton);
         SQLiteDatabase myDatabase = this.openOrCreateDatabase("customers", Context.MODE_PRIVATE,null);
         Cursor c = myDatabase.rawQuery("SELECT * FROM customers",null);
         int nameInd = c.getColumnIndex("name");
@@ -48,6 +70,7 @@ public class CustomerListActivity extends AppCompatActivity {
         }
         PersonListAdapter adapter = new PersonListAdapter(this,R.layout.adapter_view_layout,custList);
         list.setAdapter(adapter);
+        startAnimate();
         Intent parent = this.getIntent();
         String senderID = parent.getStringExtra("SenderID");
         String senderName = parent.getStringExtra("SenderName");

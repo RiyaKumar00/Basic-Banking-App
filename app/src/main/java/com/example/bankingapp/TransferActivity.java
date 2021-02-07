@@ -50,20 +50,33 @@ public class TransferActivity extends AppCompatActivity {
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        myDataBase.execSQL("UPDATE customers SET balance = balance-"+amt+" WHERE custid='"+senderID+"'");
-                        myDataBase.execSQL("UPDATE customers SET balance = balance+"+amt+" WHERE custid='"+receiverID+"'");
-                        myDataBase.execSQL("INSERT INTO transitions(sender,receiver,amount,status) VALUES('"+senderName+"','"+receiverName+"','"+amt+"','SUCCESS')");
-                        TextView result = findViewById(R.id.resultView);
-                        Button homeButton = findViewById(R.id.homeButton);
-                        Button historyButton = findViewById(R.id.TransactHist);
-                        arrow1.animate().rotationBy(180).translationXBy(-262).translationYBy(-762).scaleX(0.8f).setDuration(1000);
-                        arrow2.animate().rotationBy(180).translationXBy(290).translationYBy(762).scaleX(0.8f).setDuration(1000);
-                        text.animate().alpha(0).setDuration(1000);
-                        amtStr.animate().alpha(0).setDuration(1000);
-                        transferB.animate().alpha(0).setDuration(1000);
-                        result.animate().alpha(1).setDuration(1000);
-                        historyButton.animate().alpha(1).setDuration(1000);
-                        homeButton.animate().alpha(1).setDuration(1000);
+                        String senderBal="";
+                        Cursor c=myDataBase.rawQuery("SELECT * FROM customers WHERE custid='"+senderID+"'",null);
+                        if(c.moveToFirst()){
+                            senderBal = c.getString(c.getColumnIndex("balance"));
+                        }
+                        Log.i("bal: ",senderBal);
+                        if(Double.parseDouble(senderBal)<Double.parseDouble(amt)){
+                            myDataBase.execSQL("INSERT INTO transitions(sender,receiver,amount,status) VALUES('"+senderName+"','"+receiverName+"','"+amt+"','FAILED')");
+                            Toast.makeText(TransferActivity.this, "Transaction Failed due to insufficient balance", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                        else {
+                            myDataBase.execSQL("UPDATE customers SET balance = balance-" + amt + " WHERE custid='" + senderID + "'");
+                            myDataBase.execSQL("UPDATE customers SET balance = balance+" + amt + " WHERE custid='" + receiverID + "'");
+                            myDataBase.execSQL("INSERT INTO transitions(sender,receiver,amount,status) VALUES('" + senderName + "','" + receiverName + "','" + amt + "','SUCCESS')");
+                            TextView result = findViewById(R.id.resultView);
+                            Button homeButton = findViewById(R.id.homeButton);
+                            Button historyButton = findViewById(R.id.TransactHist);
+                            arrow1.animate().rotationBy(180).translationXBy(-280).translationYBy(-762).scaleX(0.8f).setDuration(1000);
+                            arrow2.animate().rotationBy(180).translationXBy(300).translationYBy(762).scaleX(0.8f).setDuration(1000);
+                            text.animate().alpha(0).setDuration(1000);
+                            amtStr.animate().alpha(0).setDuration(1000);
+                            transferB.animate().alpha(0).setDuration(1000);
+                            result.animate().alpha(1).setDuration(1000);
+                            historyButton.animate().alpha(1).setDuration(1000);
+                            homeButton.animate().alpha(1).setDuration(1000);
+                        }
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

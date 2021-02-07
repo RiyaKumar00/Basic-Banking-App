@@ -4,89 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#024471"
     tools:context=".Pre_MainActivity">
+
+    <ImageView
+        android:id="@+id/whitebg1"
+        android:layout_width="333dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="224dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/whitebg2"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
+        app:layout_constraintEnd_toStartOf="@+id/byText"
+        app:layout_constraintTop_toBottomOf="@+id/bankingLabel"
+        app:srcCompat="@drawable/circle" />
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="172dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="0dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="50dp"
         android:backgroundTint="@color/Transparent"
         android:onClick="start"
         android:text="START"
-        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
         app:cornerRadius="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bankingLabel"
         app:strokeColor="#FFFFFF"
         app:strokeWidth="1sp" />
 
     <ImageView
-        android:id="@+id/backgroundimg"
-        android:layout_width="548dp"
-        android:layout_height="931dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.492"
-        app:srcCompat="@drawable/circle" />
-
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:fontFamily="sans-serif"
-        android:text="WELCOME"
-        android:textColor="#F8F6F6"
-        android:textSize="72sp"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coinImg" />
-
-    <ImageView
         android:id="@+id/coinImg"
-        android:layout_width="399dp"
-        android:layout_height="394dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/basic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/money" />
 
     <TextView
         android:id="@+id/byText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="1dp"
         android:fontFamily="cursive"
         android:text="by"
-        android:textColor="#002447"
+        android:textColor="#FAFCFD"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/nameText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startButton" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="25dp"
         android:fontFamily="@font/architects_daughter"
         android:text="RIYA KUMAR"
-        android:textColor="#002447"
+        android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/byText" />
+
+    <TextView
+        android:id="@+id/basic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="332dp"
+        android:fontFamily="cursive"
+        android:text="Basic"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/bankingLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coinImg" />
+
+    <TextView
+        android:id="@+id/bankingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="33dp"
+        android:text="BANKING APP"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
