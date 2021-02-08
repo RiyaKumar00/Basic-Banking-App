@@ -80,6 +80,7 @@
         android:backgroundTint="#024471"
         android:onClick="onTransferClick"
         android:text="TRANSFER"
+        android:textSize="18sp"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
