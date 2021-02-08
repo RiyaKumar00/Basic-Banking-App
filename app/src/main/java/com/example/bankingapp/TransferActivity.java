@@ -58,7 +58,7 @@ public class TransferActivity extends AppCompatActivity {
                         Log.i("bal: ",senderBal);
                         if(Double.parseDouble(senderBal)<Double.parseDouble(amt)){
                             myDataBase.execSQL("INSERT INTO transitions(sender,receiver,amount,status) VALUES('"+senderName+"','"+receiverName+"','"+amt+"','FAILED')");
-                            Toast.makeText(TransferActivity.this, "Transaction Failed due to insufficient balance", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(TransferActivity.this, "Transaction Failed due to insufficient balance", Toast.LENGTH_LONG).show();
                             finish();
                         }
                         else {
